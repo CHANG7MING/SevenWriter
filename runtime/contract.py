@@ -7,6 +7,8 @@ URL_RE = re.compile(r"https?://[^\s)\]>]+")
 NUMBER_RE = re.compile(r"(?<![\w])\d+(?:[.,]\d+)?(?:%|％|万|亿|元|年|月|日|小时|分钟)?(?![\w])")
 DATE_RE = re.compile(r"(?:\d{4}[年/-])?\d{1,2}[月/-]\d{1,2}日?|(?:今天|明天|后天|本周|下周)(?:上午|下午|晚上)?")
 MODAL_RE = re.compile(r"可能|预计|计划|建议|应当|必须|已经|尚未|不保证|不得")
+UNCERTAIN_RE = re.compile(r"可能|预计|计划|拟|暂定|尚未|不保证|有望|视.{0,8}而定")
+CERTAINTY_RE = re.compile(r"一定|肯定|保证|确保|必然|百分之百|绝对|务必|处理完成|已经完成")
 MARKDOWN_RE = re.compile(r"^(#{1,6}\s+|```|>|\s*[-*+]\s+|\|)", re.M)
 
 
@@ -53,6 +55,8 @@ def validate_contract(source: str, candidate: str, contract: Contract) -> dict:
     source_modals, candidate_modals = set(MODAL_RE.findall(source)), set(MODAL_RE.findall(candidate))
     if source_modals != candidate_modals:
         warnings.append({"tag": "faithfulness.modality", "source": sorted(source_modals), "candidate": sorted(candidate_modals)})
+    if UNCERTAIN_RE.search(source) and not UNCERTAIN_RE.search(candidate) and CERTAINTY_RE.search(candidate):
+        failures.append({"tag": "faithfulness.modality_upgrade", "source": UNCERTAIN_RE.findall(source), "candidate": CERTAINTY_RE.findall(candidate), "message": "把预计、可能或计划升级成了确定承诺"})
     if "markdown_structure" in contract.preserve:
         src = markdown_signature(source)
         dst = markdown_signature(candidate)

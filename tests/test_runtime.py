@@ -24,6 +24,13 @@ class RuntimeTests(unittest.TestCase):
         contract = infer_contract(source)
         self.assertFalse(validate_contract(source, "已经完成。", contract)["passed"])
 
+    def test_uncertainty_cannot_be_upgraded_to_promise(self):
+        source = "已经和财务确认，预计明天下午给您反馈。"
+        candidate = "明天下午一定处理完成，请耐心等待。"
+        validation = validate_contract(source, candidate, infer_contract(source))
+        self.assertFalse(validation["passed"])
+        self.assertTrue(any(item["tag"] == "faithfulness.modality_upgrade" for item in validation["failures"]))
+
     def test_style(self):
         profile = extract_style(["我先确认。晚点回复你。\n\n这件事不复杂。"])
         self.assertEqual(profile["samples"], 1)

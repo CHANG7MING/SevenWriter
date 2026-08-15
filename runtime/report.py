@@ -74,7 +74,7 @@ def render_report(run: dict, plan: dict) -> str:
         lines.append("")
     ballots = (score.get("council") or {}).get("ballots", [])
     if not ballots and not team:
-        lines.append("本次未启用三人评审机构。高风险、候选差异较大或用户要求完整报告时应启用。")
+        lines.append("本次未启用完整三人编辑部。SevenWriter 默认要求所有场景完成资料校核、场景主笔和独立终审；请确认是否由用户明确要求快速直出或宿主无法执行独立调用，并标注缺失的复核。")
     for ballot in ballots:
         lines.extend([f"### {ballot.get('title', ballot.get('reviewer_id', '评审员'))}", "", f"- 个人评分：{round(float(ballot.get('score', 0))*20, 1)}/100", f"- 为什么是这个分数：{ballot.get('rationale') or '评审未提供理由，报告不完整'}", f"- 认可部分：{_display(ballot.get('strengths'))}", f"- 证据：{_display(ballot.get('evidence'))}", f"- 问题与建议：{_display(ballot.get('issues'))}", f"- 否决：{'是' if ballot.get('veto') else '否'}", f"- 发布/发送意见：{ballot.get('delivery_advice') or '未提供'}", ""])
     _append_change_table(lines, "三、必须修改", plan["must_fix"])
@@ -94,6 +94,7 @@ def _change_item(item, priority, reason):
         "faithfulness.lock": "恢复被遗漏的锁定内容，保持原有含义与限定条件。",
         "faithfulness.soft_lock": "恢复该概念，允许调整位置和表达形式。",
         "faithfulness.modality": "恢复‘预计、可能、已经、尚未’等状态和确定性边界。",
+        "faithfulness.modality_upgrade": "恢复原文的不确定性边界，删除无依据的‘一定、保证、确保、已完成’等确定承诺。",
         "document.structure": "恢复标题、链接、表格、代码块或引用结构。",
         "scene.length": "核对篇幅变化是否由任务需要造成；无必要时收回过度扩写或删减。",
         "scene.fit": "补充当前场景完成任务所需的信息，不添加无来源事实。",

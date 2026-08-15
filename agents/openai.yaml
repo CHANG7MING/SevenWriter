@@ -1,4 +1,4 @@
 interface:
   display_name: "SevenWriter"
-  short_description: "中文内容创作、改写、诊断、场景适配与风险检查"
-  default_prompt: "Use $seven-writer to create, diagnose, or rewrite this Chinese content while preserving facts, matching its scene, and flagging unsupported or high-risk claims."
+  short_description: "中文写作、改写、诊断与全场景三席质量控制"
+  default_prompt: "Use $seven-writer to create, diagnose, or rewrite this Chinese content with the full evidence-checking, scene-writing, and independent-review team while preserving facts and matching the real communication scene."
