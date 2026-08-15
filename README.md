@@ -7,6 +7,19 @@
   面向 AI Agent 的中文写作、改写、诊断与质量控制 Skill
 </p>
 
+<p align="center">
+  <a href="./SKILL.md">使用说明</a> ·
+  <a href="./references/editorial-team.md">三人编辑部</a> ·
+  <a href="./references/scoring-rubric.md">评分方法</a> ·
+  <a href="./benchmarks/quality/">质量案例</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/status-actively%20shaping-171817?style=flat-square&labelColor=74a46f&color=171817" alt="状态：持续完善中" />
+  <img src="https://img.shields.io/badge/runtime-Python%203.9%2B-171817?style=flat-square&labelColor=6d91bd&color=171817" alt="运行环境：Python 3.9 或更高版本" />
+  <img src="https://img.shields.io/badge/format-SKILL.md-171817?style=flat-square&labelColor=8069a5&color=171817" alt="形式：SKILL.md" />
+</p>
+
 SevenWriter 不把“去 AI 味”理解成删几个词、故意写错字或追着检测器分数跑。它先确认任务和场景，锁住事实、数字、专名、引用、链接与承诺边界，再处理结构、语气、节奏和文风。
 
 它既能改已有文案，也能在你不知道怎么写时，根据材料从零起稿。每份成稿都可以继续接受同一套保真检查、场景评分和独立复核。
@@ -130,7 +143,7 @@ SevenWriter 默认在所有场景启用三人编辑部。无论是长文、SEO�
 
 ## 当前验证
 
-- 16 项运行时测试通过。
+- 17 项运行时测试通过。
 - 25 个一级场景质量案例通过结构验证。
 - 核心运行时使用 Python 标准库，最低要求 Python 3.9+。
 
