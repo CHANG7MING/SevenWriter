@@ -16,6 +16,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-actively%20shaping-171817?style=flat-square&labelColor=74a46f&color=171817" alt="状态：持续完善中" />
+  <img src="https://img.shields.io/badge/license-MIT-171817?style=flat-square&labelColor=f5f5f0&color=171817" alt="MIT 许可证" />
   <img src="https://img.shields.io/badge/runtime-Python%203.9%2B-171817?style=flat-square&labelColor=6d91bd&color=171817" alt="运行环境：Python 3.9 或更高版本" />
   <img src="https://img.shields.io/badge/format-SKILL.md-171817?style=flat-square&labelColor=8069a5&color=171817" alt="形式：SKILL.md" />
 </p>
@@ -148,3 +149,7 @@ SevenWriter 默认在所有场景启用三人编辑部。无论是长文、SEO�
 - 核心运行时使用 Python 标准库，最低要求 Python 3.9+。
 
 更完整的执行规则从 [`SKILL.md`](./SKILL.md) 开始阅读。
+
+## 许可证
+
+SevenWriter 自有内容采用 [MIT License](./LICENSE) 发布。外部网站、论文和开源项目仅作为研究参考，其内容与商标仍归各自权利人所有。
