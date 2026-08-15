@@ -84,7 +84,7 @@ python scripts/sevenwriter.py fetch-url https://example.com --output page.json
 
 ### 7. 多维评分
 
-读取 `references/scoring-rubric.md`。先执行硬门槛，再评估：事实保真 25、场景适配 20、自然度 20、信息密度 15、文风匹配 10、可读性 5、模式风险 5。每一项必须同时报告原始分、加权分、得分理由、扣分理由、证据和提升条件；不得只给数字。检测器分数不计入 100 分。
+读取 `references/scoring-rubric.md`。先执行硬门槛，再将风格/目标达成、内容保留和自然/流畅度分别按 1–5 分报告；三项不可互相补偿，不得只报综合分。然后按场景叠加 SevenWriter 100 分 rubric：事实保真 25、场景适配 20、自然度 20、信息密度 15、文风匹配 10、可读性 5、模式风险 5。每一项必须同时报告原始分、加权分、得分理由、扣分理由、证据和提升条件。检测器分数不计入 100 分。
 
 所有场景默认读取 `references/editorial-team.md` 并启用完整三人编辑部：资料校核席先建立证据包，场景主笔席负责成稿或诊断方案，独立终审席用新上下文复核。该规则同样适用于短消息、邮件、朋友圈、客服沟通、社交文案和基础纠错，不以篇幅短或风险低为由跳过。只诊断时保留三个席位，但场景主笔席不得改写正文，只整理问题、修改优先级和可执行建议。只有用户明确要求快速直出、关闭评审或宿主确实无法执行独立调用时才允许简化，并在交付中说明未完成哪些席位。三席分别给分和解释，不得用平均分掩盖否决、证据不足或具体修改项。
 
@@ -110,7 +110,8 @@ python scripts/sevenwriter.py compare baseline.md candidate.md --source source.m
 ## 输出约定
 
 - `analyze`：给出按严重度排序的证据、位置、原因与建议；不自动改稿。
-- `rewrite/create`：先给最终成稿，再提供完整评分；从零创作也必须接受同一套事实、场景、自然度、密度、文风和可读性评审。
+- `rewrite`：先给最终成稿，再分别报告风格/目标达成、内容保留、自然/流畅度及场景化评分。
+- `create`：先给最终成稿；以材料依据、任务目标、新增主张边界和自然/流畅度评分，不伪造原文保留分。
 - 文件任务：写入新文件，除非用户明确授权覆盖；保持原扩展名与结构。
 - 无足够事实时标注 `[待确认]` 或提出必要问题，不补写看似合理的细节。
 - 启用自动闭环时同时生成：`final.md`（成稿副本）、`review-report.md`（逐项评分理由、三人独立意见、合并分、位置化修改表、保留项、淘汰理由和发布/发送建议）、`revision-plan.json`（机器可读修改清单）与 `run.json`（完整记录）。修改表至少包含优先级、位置、当前内容、问题、原因、建议改法、参考改文、验证方式和人工确认状态。不得只给总分而隐藏证据。
@@ -134,6 +135,7 @@ python scripts/sevenwriter.py compare baseline.md candidate.md --source source.m
 - 三人编辑部的证据、主笔与独立终审：`references/editorial-team.md`
 - 统一评分、修改表与发布清单：`references/review-output-contract.md`
 - 学术选刊、分区指标与投稿准备度：`references/academic-journal-readiness.md`
+- 小红书、社交帖子及短视频的高传播潜力生成与复盘：`references/high-potential-social-content.md`
 
 ## 最小运行要求
 

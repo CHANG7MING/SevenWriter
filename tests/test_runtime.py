@@ -164,6 +164,15 @@ class RuntimeTests(unittest.TestCase):
             self.assertTrue((Path(tmp) / "review-report.md").exists())
             self.assertIn("独立终审席", (Path(tmp) / "review-report.md").read_text(encoding="utf-8"))
 
+    def test_high_potential_social_profiles_require_value_and_progression(self):
+        from runtime.profiles import scene_score
+        xhs_score, xhs_misses = scene_score("适合经常出差的人：先看三项选择标准，再用一个具体例子对比。不过，预算有限时要注意这个限制。", "xiaohongshu")
+        video_score, video_misses = scene_score("如果你正在准备面试，先记住这个问题。接着看例子，最后给你完整结果。", "short-video")
+        self.assertEqual([], xhs_misses)
+        self.assertEqual([], video_misses)
+        self.assertEqual(5.0, xhs_score)
+        self.assertEqual(5.0, video_score)
+
     def test_docx_roundtrip(self):
         with tempfile.TemporaryDirectory() as tmp:
             source, repl, output = Path(tmp)/"a.docx", Path(tmp)/"r.json", Path(tmp)/"b.docx"
