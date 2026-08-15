@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>SevenWriter</strong><br>
+  <strong>SEVENWRITER</strong><br>
   面向 AI Agent 的中文写作、改写、诊断与质量控制 Skill
 </p>
 
