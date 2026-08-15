@@ -1,0 +1,14 @@
+{
+  "required": ["id", "scene", "intent", "draft_state", "brief", "input", "locks", "must_find", "must_not_introduce", "acceptance"],
+  "intents": ["create", "analyze", "light_rewrite", "deep_rewrite"],
+  "draft_states": ["excellent", "ordinary", "problematic", "protected"],
+  "length_policy": {
+    "short_message": [50, 200],
+    "email_service_weekly": [150, 800],
+    "social_product_website": [300, 1500],
+    "longform_academic": [1000, 5000],
+    "podcast_speech": "按目标分钟数与正常中文语速验收",
+    "ppt": "按页数、单页任务和讲者备注验收",
+    "docx": "必须使用真实 docx 检查结构与格式往返"
+  }
+}

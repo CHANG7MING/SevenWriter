@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+runs/
+tmp/
+
+assets/readme/source/*-key.png
+assets/readme/source/*-preview.png
+assets/readme/source/*-check.png

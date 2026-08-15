@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "academic": {
+      "as_of_date": "[本次查询日期 YYYY-MM-DD]",
+      "target_journal": "[待填写具体期刊]",
+      "issn": "[待核验]",
+      "publisher": "[例如 ACS；不能代替具体期刊名]",
+      "article_type": "[Research Article / Review / Letter 等]",
+      "journal_scope": "[根据最新 Scope 摘录并注明来源]",
+      "audience": "[目标读者]",
+      "contribution_statement": "[材料支持的贡献边界]",
+      "guidelines_url": "[具体期刊 Author Guidelines]",
+      "guidelines_checked_at": "YYYY-MM-DD",
+      "indexing_history": [
+        {"date": "YYYY-MM-DD", "collection": "[SCIE / SSCI / ESCI / AHCI 等]", "source": "[Master Journal List URL 或授权来源]"}
+      ],
+      "jcr_history": [
+        {"release_year": "[JCR发布年度]", "metric_year": "[指标对应年度]", "category": "[具体类别]", "quartile": "[Q1-Q4]", "rank_or_percentile": "[排名或百分位]", "jif": "[数值]", "retrieved_at": "YYYY-MM-DD", "source": "[授权来源]"}
+      ],
+      "cas_partition_history": [
+        {"year": "[不晚于2025的官方历史年份]", "major_category": "[大类]", "major_quartile": "[1-4区]", "minor_categories": [], "top": "[是/否]", "retrieved_at": "YYYY-MM-DD", "source": "[官方或机构授权来源]"}
+      ],
+      "format": {
+        "language": "[语言]",
+        "word_limit": "[篇幅]",
+        "abstract_limit": "[摘要限制与结构]",
+        "section_order": "[章节顺序]",
+        "reference_style": "[初投与修回要求]",
+        "figures_tables": "[数量、格式、分辨率]",
+        "graphical_abstract": "[是否需要]"
+      },
+      "reporting": {
+        "study_design": "[研究设计]",
+        "applicable_guideline": "[适用规范及版本]",
+        "limitations": "[主要限制]",
+        "statistics_checked": "[由谁、何时核查]"
+      },
+      "ethics": {
+        "authorship": "[作者资格与顺序已确认/待确认]",
+        "conflict_of_interest": "[声明]",
+        "funding": "[资助与编号]",
+        "ai_disclosure": "[期刊要求下的 AI 使用披露]",
+        "duplicate_submission": "[未一稿多投/待确认]",
+        "approval_consent_registration": "[按研究类型填写]"
+      },
+      "open_science": {
+        "data_availability": "[数据声明]",
+        "code_availability": "[代码声明]",
+        "supporting_information": "[附件清单]"
+      },
+      "submission": {
+        "cover_letter": "[已准备/待准备]",
+        "author_information": "[姓名、单位、邮箱一致性]",
+        "orcid": "[作者 ORCID 状态]",
+        "permissions": "[图片、量表、第三方材料授权]"
+      },
+      "publication": {
+        "open_access": "[模式]",
+        "apc": "[金额、币种、查询日期]",
+        "waiver": "[减免条件]",
+        "license": "[许可]",
+        "preprint_policy": "[政策]"
+      }
+    }
+  }
+}

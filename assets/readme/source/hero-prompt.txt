@@ -1,0 +1,10 @@
+Use case: illustration-story
+Asset type: transparent cutout subject for the SevenWriter GitHub README hero.
+Reference: SevenVisual canonical young man and gray tabby cat identity image.
+Scene: the young man checks an original manuscript, revises a clean page with a black pen, and sorts three physical paper stacks that imply evidence, writing, and review. The single gray tabby cat sits awake and observes.
+Composition: isolated front three-quarter tabletop scene for the right half of a wide hero; generous padding; no object touches the border.
+Physical rules: camera and actor see the same upward-facing manuscript surfaces; pen, gaze, hand, desk, paper perspective, shadows, and occlusion agree; no screens.
+Style: confident manga ink outlines, restrained circular halftone, rounded proportions, black and white with muted blue, purple, green, and the cat's muted orange collar.
+Identity: preserve the recurring rounded young Chinese man with no glasses and exactly one chubby gray tabby cat with white muzzle, white paws, three forehead stripes, and orange collar.
+Background: perfectly flat solid #00FF00 chroma key, no texture, gradient, floor, reflection, or cast shadow.
+Avoid: readable text, letters, logos, watermark, extra people, extra animals, dog, thin stick figure, 3D, glossy gradient, photorealism, dashboard, screen, or impossible paper faces.

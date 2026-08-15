@@ -1,0 +1,13 @@
+style:
+  language: "zh-CN"
+  register: "clear-neutral"
+  sentence_length: "mixed"
+  paragraph_length: "short-medium"
+  professional: 0.75
+  conversational: 0.35
+  emotional: 0.20
+  rhetorical_questions: "low"
+  metaphors: "low"
+  first_person: "contextual"
+  forced_summary: "avoid"
+  invented_experience: "forbid"
